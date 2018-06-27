@@ -51,7 +51,9 @@ class Aws extends BaseEmail
             }
         }
         $this->PHPMailer->addAddress($email, 'Recipient Name');
+        $this->PHPMailer->Body = $content;
         try{
+
             $result = $this->PHPMailer->send();
             var_dump($result);
             return ['server_provider'=>'aws','result'=>'ok'];
