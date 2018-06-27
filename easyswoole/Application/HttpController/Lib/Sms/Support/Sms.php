@@ -103,7 +103,12 @@ class Sms extends BaseSms {
 
         $client = SesClient::factory(array(
             'version'=> 'latest',
-            'region' => 'us-west-2'
+            'region' => 'us-west-2',
+            'credentials' => [
+                'key'         => 'AKIAJE353SOUXYK5P4UA',
+                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
+            ],
+
         ));
 
         try {
