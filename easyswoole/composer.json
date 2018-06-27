@@ -1,0 +1,21 @@
+{
+    "name": "easyswoole/demo",
+    "authors": [
+        {
+            "name": "如果的如果",
+            "email": "291323003@qq.com"
+        }
+    ],
+    "require": {
+        "easyswoole/easyswoole": "2.x-dev",
+        "joshcam/mysqli-database-class": "dev-master",
+        "easyswoole/swoole-ide-helper": "1.*",
+        "illuminate/database": "^5.6",
+        "aws/aws-sdk-php": "^3.62"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "Application/"
+        }
+    }
+}
