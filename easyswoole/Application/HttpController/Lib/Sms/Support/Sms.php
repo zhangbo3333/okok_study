@@ -10,7 +10,7 @@ class Sms extends BaseSms {
 
         //todo   send sms
         $snsClient = new SesClient([
-            'region'      => 'ap-northeast-1',//这是亚马逊在新加坡的服务器，具体要根据情况决定
+            'region'      => 'us-west-2',//这是亚马逊在新加坡的服务器，具体要根据情况决定
             'credentials' => [
                 'key'         => 'AKIAJE353SOUXYK5P4UA',
                 'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
