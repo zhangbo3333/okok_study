@@ -115,7 +115,7 @@ class Sms extends BaseSms {
             $result = $snsClient->sendEmail([
                 'Destination' => [
                     'ToAddresses' => [
-                        'funy_suny@163.com',
+                        'noreply@service.bitboole.com',
                     ],
                 ],
                 'Message' => [
