@@ -31,8 +31,6 @@ class Email  extends AbstractAsyncTask
 
     public function finish($result, $task_id)
     {
-
-
             $arr = [
                 'service_provider'=>$result['data']['server_provider'],
                 'result'=>$result['data']['result'],
@@ -40,6 +38,8 @@ class Email  extends AbstractAsyncTask
             ];
         if($result['data']['result'] == 'ok'){
             $arr['receive_time'] = $result['data']['receive_time'];
+        }else{
+            $arr['remark'] = $result['data']['remark'];
         }
         $res = Capsule::table('email')->where('id',$result['id'])->update($arr);
         if($res){
