@@ -24,14 +24,9 @@ class Email  extends AbstractAsyncTask
             'remark'=>''
         ];
         $id = Capsule::table('email')->insertGetId($data);
+        $data =  ManagerEmail::getInstance()->send($taskData['email'],$taskData['content']);
+        return ['id'=>$id,'data'=>$data];
 
-        //todo
-        try{
-            $data =  ManagerEmail::getInstance()->send($taskData['email'],$taskData['content']);
-            return ['id'=>$id,'data'=>$data];
-        }catch (\ErrorException $e){
-            //todo
-        }
 
     }
 

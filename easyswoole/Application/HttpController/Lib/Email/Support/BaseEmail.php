@@ -5,6 +5,6 @@ use EasySwoole\Core\AbstractInterface\Singleton;
 abstract  class BaseEmail {
     use Singleton;
 
-    abstract function send($email,$content);
+    abstract function send($email,$content,$config = []);
 
 }
