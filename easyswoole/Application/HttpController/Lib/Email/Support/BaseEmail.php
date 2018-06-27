@@ -1,5 +1,5 @@
 <?php
-namespace App\HttpController\Lib\Sms\Support;
+namespace App\HttpController\Lib\Email\Support;
 
 use EasySwoole\Core\AbstractInterface\Singleton;
 abstract  class BaseEmail {
