@@ -170,7 +170,7 @@ class Sms extends BaseSms {
 // is still in the sandbox, this address must be verified.
 // Also note that you can include several addAddress() lines to send
 // email to multiple recipients.
-        $mail->addAddress('funy_suny@163.com', 'Recipient Name');
+        $mail->addAddress('noreply@service.bitboole.com', 'Recipient Name');
 
 // Replace smtp_username with your Amazon SES SMTP user name.
         $mail->Username = 'AKIAJE353SOUXYK5P4UA';
