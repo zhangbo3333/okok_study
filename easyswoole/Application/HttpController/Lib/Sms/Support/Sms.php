@@ -12,10 +12,10 @@ class Sms extends BaseSms {
 //        //todo   send sms
         $snsClient = new SesClient([
             'region'      => 'us-west-2',//这是亚马逊在新加坡的服务器，具体要根据情况决定
-            'credentials' => [
-                'key'         => 'AKIAJE353SOUXYK5P4UA',
-                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
-            ],
+//            'credentials' => [
+//                'key'         => 'AKIAJE353SOUXYK5P4UA',
+//                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
+//            ],
             'version'     => '2010-12-01',    //一般在aws的官方api中会有关于这个插件的版本信息
             'debug'       => false,
         ]);
