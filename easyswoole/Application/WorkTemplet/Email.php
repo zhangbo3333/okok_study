@@ -38,6 +38,8 @@ class Email  extends AbstractAsyncTask
 
     public function finish($result, $task_id)
     {
+
+
         $arr = [
 
             'service_provider'=>$result['data']['server_provider'],
