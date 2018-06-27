@@ -11,7 +11,8 @@
         "joshcam/mysqli-database-class": "dev-master",
         "easyswoole/swoole-ide-helper": "1.*",
         "illuminate/database": "^5.6",
-        "aws/aws-sdk-php": "^3.62"
+        "aws/aws-sdk-php": "^3.62",
+        "phpmailer/phpmailer": "^6.0"
     },
     "autoload": {
         "psr-4": {
