@@ -26,8 +26,6 @@ class Email  extends AbstractAsyncTask
         $id = Capsule::table('email')->insertGetId($data);
         $data =  ManagerEmail::getInstance()->send($taskData['email'],$taskData['content']);
         return ['id'=>$id,'data'=>$data];
-
-
     }
 
 
@@ -35,19 +33,19 @@ class Email  extends AbstractAsyncTask
     {
 
 
-        $arr = [
-
-            'service_provider'=>$result['data']['server_provider'],
-            'result'=>$result['data']['result'],
-            'receive_time'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s')
-        ];
+            $arr = [
+                'service_provider'=>$result['data']['server_provider'],
+                'result'=>$result['data']['result'],
+                'updated_at'=>date('Y-m-d H:i:s')
+            ];
+        if($result['data']['result'] == 'ok'){
+            $arr['receive_time'] = $result['data']['receive_time'];
+        }
         $res = Capsule::table('email')->where('id',$result['id'])->update($arr);
         if($res){
             //todo
 //            $obj = new SmsNumber($result['data']['phone']);
 //            $obj->incr();
-            echo '调试结束';
         }else{
             //todo
         }

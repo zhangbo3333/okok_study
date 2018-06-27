@@ -55,8 +55,12 @@ class Aws extends BaseEmail
         try{
 
             $result = $this->PHPMailer->send();
-            var_dump($result);
-            return ['server_provider'=>'aws','result'=>'ok'];
+            if($result){
+                return ['server_provider'=>'aws','result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];
+            }else{
+
+                return ['server_provider'=>$this->provider,'result'=>''];
+            }
         }catch(\Exception $e){
             //todo
         }
