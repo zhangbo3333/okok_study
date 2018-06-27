@@ -7,7 +7,7 @@
  */
 
 return [
-    'SERVER_NAME'=>"EasySwoole",
+    'SERVER_NAME'=>"push",
     'MAIN_SERVER'=>[
         'HOST'=>'0.0.0.0',
         'PORT'=>9501,
