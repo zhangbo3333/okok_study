@@ -135,7 +135,7 @@ class Sms extends BaseSms {
                         'Data' => 'Amazon SES test (AWS SDK for PHP)',
                     ],
                 ],
-                'Source' => SENDER,
+                'Source' => 'noreply@service.bitboole.com',
                 // If you are not using a configuration set, comment or delete the
                 // following line
                 'ConfigurationSetName' => 'ConfigSet',
