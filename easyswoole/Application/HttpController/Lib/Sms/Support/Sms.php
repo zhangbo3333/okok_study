@@ -10,15 +10,15 @@ class Sms extends BaseSms {
     {
 
 //        //todo   send sms
-//        $snsClient = new SesClient([
-//            'region'      => 'us-west-2',//这是亚马逊在新加坡的服务器，具体要根据情况决定
-//            'credentials' => [
-//                'key'         => 'AKIAJE353SOUXYK5P4UA',
-//                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
-//            ],
-//            'version'     => '2010-12-01',    //一般在aws的官方api中会有关于这个插件的版本信息
-//            'debug'       => false,
-//        ]);
+        $snsClient = new SesClient([
+            'region'      => 'us-west-2',//这是亚马逊在新加坡的服务器，具体要根据情况决定
+            'credentials' => [
+                'key'         => 'AKIAJE353SOUXYK5P4UA',
+                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
+            ],
+            'version'     => '2010-12-01',    //一般在aws的官方api中会有关于这个插件的版本信息
+            'debug'       => false,
+        ]);
 //
 //////        $topic = $snsClient->createTopic([
 //////            'Name' => 'abc'             //自定义
@@ -101,18 +101,18 @@ class Sms extends BaseSms {
 //        define('CHARSET','UTF-8');
 
 
-        $client = SesClient::factory(array(
-            'version'=> 'latest',
-            'region' => 'us-west-2',
-            'credentials' => [
-                'key'         => 'AKIAJE353SOUXYK5P4UA',
-                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
-            ],
-
-        ));
+//        $client = SesClient::factory(array(
+//            'version'=> 'latest',
+//            'region' => 'us-west-2',
+//            'credentials' => [
+//                'key'         => 'AKIAJE353SOUXYK5P4UA',
+//                'secret'      => 'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
+//            ],
+//
+//        ));
 
         try {
-            $result = $client->sendEmail([
+            $result = $snsClient->sendEmail([
                 'Destination' => [
                     'ToAddresses' => [
                         'funy_suny@163.com',
@@ -143,7 +143,7 @@ class Sms extends BaseSms {
                 'Source' => 'noreply@service.bitboole.com',
                 // If you are not using a configuration set, comment or delete the
                 // following line
-                'ConfigurationSetName' => 'ConfigSet',
+//                'ConfigurationSetName' => 'ConfigSet',
             ]);
             $messageId = $result->get('MessageId');
             echo("Email sent! Message ID: $messageId"."\n");
