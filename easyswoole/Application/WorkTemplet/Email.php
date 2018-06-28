@@ -25,7 +25,7 @@ class Email  extends AbstractAsyncTask
         ];
         $id = Capsule::table('email')->insertGetId($data);
         $data =  ManagerEmail::getInstance()->send($taskData['email'],$taskData['content'],$taskData['name'],$taskData['subject']);
-        return ['id'=>$id,'data'=>$data];
+        return ['id'=>$id,'data'=>$data,'email'=>$taskData['email']];
     }
 
 
@@ -44,7 +44,7 @@ class Email  extends AbstractAsyncTask
         $res = Capsule::table('email')->where('id',$result['id'])->update($arr);
         if($res){
             //todo
-            $obj = TimesLimit::getInstance($result['data']['email'],1);
+            $obj = TimesLimit::getInstance($result['email'],1);
             $obj->incr();
         }else{
             //todo
