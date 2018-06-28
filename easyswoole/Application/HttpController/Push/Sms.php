@@ -24,7 +24,7 @@ class Sms extends Controller {
 //        $number = new SmsNumber($data['phone']);
 //        if($number->check()){
 //            //投递任务
-        $obj = new sendSms(['phone'=>$data['phone'],'code'=>$data['code']]);
+        $obj = new sendSms(['phone'=>$data['phone'],'content'=>$data['content']]);
         TaskManager::async($obj);
         $this->writeJson(200,['msg'=>'ok'],'ok');
 //        }else{
