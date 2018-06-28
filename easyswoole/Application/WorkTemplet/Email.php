@@ -42,7 +42,6 @@ class Email  extends AbstractAsyncTask
             $arr['remark'] = $result['data']['remark'];
         }
         $res = Capsule::table('email')->where('id',$result['id'])->update($arr);
-        var_dump($res);
         if($res){
             //todo
 //            var_dump('增加');

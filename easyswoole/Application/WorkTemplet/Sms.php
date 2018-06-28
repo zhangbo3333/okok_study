@@ -5,6 +5,7 @@ namespace App\WorkTemplet;
 use App\HttpController\Lib\Sms\ManagerSms;
 use EasySwoole\Core\Swoole\Task\AbstractAsyncTask;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use App\Event\TimesLimit;
 
 class Sms  extends AbstractAsyncTask
 {
@@ -23,33 +24,32 @@ class Sms  extends AbstractAsyncTask
             'remark'=>''
         ];
         $id = Capsule::table('sms')->insertGetId($data);
-        //todo
-        try{
-            $data =  ManagerSms::getInstance()->send($taskData['phone'],$taskData['content']);
-            return ['id'=>$id,'data'=>$data];
-        }catch (\ErrorException $e){
-            //todo
-        }
+
+        $data =  ManagerSms::getInstance()->send($taskData['phone'],$taskData['content']);
+        return ['id'=>$id,'data'=>$data,'phone'=>$taskData['phone']];
+
 
     }
 
-
     public function finish($result, $task_id)
     {
-//        $arr = [
-//            'service_provider'=>$result['data']['provider'],
-//            'result'=>$result['data']['result'],
-//            'receive_time'=>date('Y-m-d H:i:s'),
-//            'updated_at'=>date('Y-m-d H:i:s')
-//        ];
-//        $res = Capsule::table('sms')->where('id',$result['id'])->update($arr);
-//        if($res){
-//            //todo
-////            $obj = new SmsNumber($result['data']['phone']);
-////            $obj->incr();
-//        }else{
-//            //todo
-//        }
+        $arr = [
+            'service_provider'=>$result['data']['provider'],
+            'updated_at'=>date('Y-m-d H:i:s')
+        ];
+        if($result['data']['result'] == 'ok'){
+            $arr['result'] = 'ok';
+            $arr['receive_time']= date('Y-m-d H:i:s');
+        }
+        $res = Capsule::table('sms')->where('id',$result['id'])->update($arr);
+        if($res){
+            //todo
+            $obj = new TimesLimit();
+            $obj->incr($result['phone'],2);
+        }else{
+            //todo
+            
+        }
 
     }
 }

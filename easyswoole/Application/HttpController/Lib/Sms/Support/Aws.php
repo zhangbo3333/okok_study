@@ -2,7 +2,6 @@
 namespace App\HttpController\Lib\Sms\Support;
 use Aws\Sns\SnsClient;
 use EasySwoole\Config;
-use Aws\Result;
 
 class Aws extends BaseSms {
 
@@ -20,13 +19,13 @@ class Aws extends BaseSms {
             'Message' => $content,
             'PhoneNumber' => $phone,
         ];
-        $result = $this->snsClient->Publish($args);
-        $result = $result->toArray();
-        var_dump($result);
-        if($result['@metadata']['statusCode'] == 200){
-            var_dump(200);
+        try{
+            $this->snsClient->Publish($args);
+            return   ['server_provider'=>$this->provider,'result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];
         }
-//        ['server_provider'=>$this->provider,'result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];
+        catch(\Exception $e){
+            return ['server_provider'=>$this->provider,'result'=>''];
+        }
     }
 
     public function getSNSClient()
