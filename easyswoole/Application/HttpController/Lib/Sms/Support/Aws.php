@@ -2,7 +2,7 @@
 namespace App\HttpController\Lib\Sms\Support;
 use Aws\Sns\SnsClient;
 use EasySwoole\Config;
-
+use Aws\Result;
 
 class Aws extends BaseSms {
 
@@ -21,7 +21,9 @@ class Aws extends BaseSms {
             'PhoneNumber' => $phone,
         ];
         $result = $this->snsClient->Publish($args);
-        if($result->data['@metadata']['statusCode'] == 200){
+        $result = $result->toArray();
+        var_dump($result);
+        if($result['@metadata']['statusCode'] == 200){
             var_dump(200);
         }
 //        ['server_provider'=>$this->provider,'result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];
