@@ -34,7 +34,7 @@ class Sms  extends AbstractAsyncTask
     public function finish($result, $task_id)
     {
         $arr = [
-            'service_provider'=>$result['data']['service_provider'],
+            'service_provider'=>$result['data']['server_provider'],
             'updated_at'=>date('Y-m-d H:i:s')
         ];
         if($result['data']['result'] == 'ok'){
