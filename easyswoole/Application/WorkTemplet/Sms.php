@@ -12,7 +12,7 @@ class Sms  extends AbstractAsyncTask
     {
         $data  = [
             'phone'=>$taskData['phone'],
-            'content'=>'',
+            'content'=>$taskData['content'],
             'service_provider'=>'',
             'result'=>'',
             'send_time'=>date('Y-m-d H:i:s'),
@@ -23,11 +23,9 @@ class Sms  extends AbstractAsyncTask
             'remark'=>''
         ];
         $id = Capsule::table('sms')->insertGetId($data);
-
         //todo
         try{
-
-            $data =  ManagerSms::getInstance()->send($taskData['phone'],$taskData['code']);
+            $data =  ManagerSms::getInstance()->send($taskData['phone'],$taskData['content']);
             return ['id'=>$id,'data'=>$data];
         }catch (\ErrorException $e){
             //todo
@@ -38,20 +36,20 @@ class Sms  extends AbstractAsyncTask
 
     public function finish($result, $task_id)
     {
-        $arr = [
-            'content'=>'发布了一个短信',
-            'service_provider'=>$result['data']['provider'],
-            'result'=>$result['data']['result'],
-            'receive_time'=>date('Y-m-d H:i:s'),
-            'updated_at'=>date('Y-m-d H:i:s')
-        ];
-        $res = Capsule::table('sms')->where('id',$result['id'])->update($arr);
-        if($res){
-            //todo
-//            $obj = new SmsNumber($result['data']['phone']);
-//            $obj->incr();
-        }else{
-            //todo
-        }
+//        $arr = [
+//            'service_provider'=>$result['data']['provider'],
+//            'result'=>$result['data']['result'],
+//            'receive_time'=>date('Y-m-d H:i:s'),
+//            'updated_at'=>date('Y-m-d H:i:s')
+//        ];
+//        $res = Capsule::table('sms')->where('id',$result['id'])->update($arr);
+//        if($res){
+//            //todo
+////            $obj = new SmsNumber($result['data']['phone']);
+////            $obj->incr();
+//        }else{
+//            //todo
+//        }
+
     }
 }

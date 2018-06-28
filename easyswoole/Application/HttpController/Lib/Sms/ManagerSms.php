@@ -10,7 +10,7 @@ class ManagerSms {
 
     use Singleton;
 
-    public static $SmsName = 'Sms';
+    public static $SmsName = 'Aws';
     public static $namespace = 'App\HttpController\Lib\Sms\Support\\';
 
     protected function __construct($SmsName = null)

@@ -96,6 +96,12 @@ return [
         'PORT'=>587,
         'IS_HTML'=>true
     ],
+    'AWS_SMS'=>[
+        'KEY'=>'AKIAJRQRODSCCHW26LGQ',
+        'SECRET'=>'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',
+        'HOST'=>'us-west-2',
+        'VERSION'=>'latest',
+    ],
 
     //times limit
     'TIMES_LIMIT'=>[
