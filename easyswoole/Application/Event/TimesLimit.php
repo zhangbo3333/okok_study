@@ -47,7 +47,7 @@ class TimesLimit {
         $pool = PoolManager::getInstance()->getPool('App\Utility\RedisPool');
         $redis = $pool->getObj();
         $num = $redis->exec('get',$this->getPrefix($type).$address);
-
+        var_dump($num);
         $pool->freeObj($redis);
         $limit =  $this->getLimit($type);
         if(is_null($num)||$num < $limit){
