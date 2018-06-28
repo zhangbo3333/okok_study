@@ -29,6 +29,5 @@ class Email extends Controller {
         }else{
             $this->writeJson(403,[],'too much send,waiting a moment ');
         }
-
     }
 }
