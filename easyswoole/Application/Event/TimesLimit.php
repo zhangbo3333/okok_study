@@ -35,7 +35,7 @@ class TimesLimit {
             $num = $redis->get($this->getPrefix().$this->address);
             $redis->set($this->getPrefix().$this->address,$num+1);
         }else{
-            $redis->setex($this->getPrefix().$this->address,$this->cycle,1);
+            var_dump($redis->setex($this->getPrefix().$this->address,$this->cycle,1));
         }
         unset($redis);
 //        $redis = $pool->getObj();
