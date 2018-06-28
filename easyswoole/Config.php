@@ -85,4 +85,16 @@ return [
         'MAX' => 100 // 最大连接数
     ],
 
+    //aws smtp params
+    'AWS_SMTP'=>[
+        'KEY' => 'AKIAJE353SOUXYK5P4UA',
+        'SECRET'=>'AhTf8eokqpm+buQszf7Fa80/33bJbqLMUWm2NRwKzM3f',
+        'HOST'=>'email-smtp.us-west-2.amazonaws.com',
+        'FROM'=>'noreply@service.bitboole.com',
+        'AUTH'=>true,
+        'SECURE'=>'tls',
+        'PORT'=>587,
+        'IS_HTML'=>true
+    ],
+
 ];

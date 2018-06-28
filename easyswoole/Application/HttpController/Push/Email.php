@@ -24,7 +24,7 @@ class Email extends Controller {
 //        $number = new SmsNumber($data['phone']);
 //        if($number->check()){
             //投递任务
-            $obj = new sendEmail(['email'=>$data['email'],'content'=>$data['content']]);
+            $obj = new sendEmail(['email'=>$data['email'],'content'=>$data['content'],'name'=>$data['name'],'subject'=>$data['subject']]);
             TaskManager::async($obj);
             $this->writeJson(200,['msg'=>'ok'],'ok');
 //        }else{

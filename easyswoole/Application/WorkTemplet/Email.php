@@ -24,7 +24,7 @@ class Email  extends AbstractAsyncTask
             'remark'=>''
         ];
         $id = Capsule::table('email')->insertGetId($data);
-        $data =  ManagerEmail::getInstance()->send($taskData['email'],$taskData['content']);
+        $data =  ManagerEmail::getInstance()->send($taskData['email'],$taskData['content'],$taskData['name'],$taskData['subject']);
         return ['id'=>$id,'data'=>$data];
     }
 
@@ -44,8 +44,8 @@ class Email  extends AbstractAsyncTask
         $res = Capsule::table('email')->where('id',$result['id'])->update($arr);
         if($res){
             //todo
-//            $obj = new SmsNumber($result['data']['phone']);
-//            $obj->incr();
+            $obj = new SmsNumber($result['data']['phone']);
+            $obj->incr();
         }else{
             //todo
         }
