@@ -5,7 +5,7 @@ namespace App\WorkTemplet;
 use App\HttpController\Lib\Email\ManagerEmail;
 use EasySwoole\Core\Swoole\Task\AbstractAsyncTask;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use App\Event\SmsNumber;
+use App\Event\TimesLimit;
 
 class Email  extends AbstractAsyncTask
 {
@@ -44,7 +44,7 @@ class Email  extends AbstractAsyncTask
         $res = Capsule::table('email')->where('id',$result['id'])->update($arr);
         if($res){
             //todo
-            $obj = new SmsNumber($result['data']['phone']);
+            $obj = TimesLimit::getInstance($result['data']['email'],1);
             $obj->incr();
         }else{
             //todo

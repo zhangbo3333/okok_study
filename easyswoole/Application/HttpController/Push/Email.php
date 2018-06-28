@@ -6,8 +6,7 @@ namespace  App\HttpController\Push;
 use EasySwoole\Core\Http\AbstractInterface\Controller;
 use App\WorkTemplet\Email as  sendEmail;
 use EasySwoole\Core\Swoole\Task\TaskManager;
-use App\Event\SmsNumber;
-
+use App\Event\TimesLimit;
 
 class Email extends Controller {
 
@@ -21,15 +20,15 @@ class Email extends Controller {
         $request = $this->request();
         $data= $request->getParsedBody();
         //次数检查
-//        $number = new SmsNumber($data['phone']);
-//        if($number->check()){
+        $number = TimesLimit::getInstance($data['email'],1);
+        if($number){
             //投递任务
             $obj = new sendEmail(['email'=>$data['email'],'content'=>$data['content'],'name'=>$data['name'],'subject'=>$data['subject']]);
             TaskManager::async($obj);
             $this->writeJson(200,['msg'=>'ok'],'ok');
-//        }else{
-//            $this->writeJson(403,[],'too much send,you can not send any sms today ');
-//        }
+        }else{
+            $this->writeJson(403,[],'too much send,waiting a moment ');
+        }
 
     }
 }

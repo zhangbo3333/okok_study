@@ -97,4 +97,17 @@ return [
         'IS_HTML'=>true
     ],
 
+    //times limit
+    'TIMES_LIMIT'=>[
+        'sms'=>[
+            'cycle'=>86400,
+            'times'=>5
+        ],
+        'email'=>[
+            'cycle'=>86400,
+            'times'=>5
+        ],
+    ]
+
+
 ];
