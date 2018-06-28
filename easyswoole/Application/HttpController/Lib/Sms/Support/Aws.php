@@ -20,7 +20,10 @@ class Aws extends BaseSms {
             'Message' => $content,
             'PhoneNumber' => $phone,
         ];
-        var_dump($this->snsClient->Publish($args));
+        $result = $this->snsClient->Publish($args);
+        if($result->data['@metadata']['statusCode'] == 200){
+            var_dump(200);
+        }
 //        ['server_provider'=>$this->provider,'result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];
     }
 
@@ -33,7 +36,7 @@ class Aws extends BaseSms {
                 'key'         => $conf['KEY'],
                 'secret'      => $conf['SECRET'],
             ],
-            'version'     => $conf['VERSION'],    //一般在aws的官方api中会有关于这个插件的版本信息
+            'version'     => $conf['VERSION'],
             'debug'       => false,
         ]);
         $this->snsClient  = $snsClient;
