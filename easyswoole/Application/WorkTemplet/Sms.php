@@ -34,7 +34,7 @@ class Sms  extends AbstractAsyncTask
     public function finish($result, $task_id)
     {
         $arr = [
-            'service_provider'=>$result['data']['provider'],
+            'service_provider'=>$result['data']['service_provider'],
             'updated_at'=>date('Y-m-d H:i:s')
         ];
         if($result['data']['result'] == 'ok'){
@@ -48,7 +48,7 @@ class Sms  extends AbstractAsyncTask
             $obj->incr($result['phone'],2);
         }else{
             //todo
-            
+
         }
 
     }
