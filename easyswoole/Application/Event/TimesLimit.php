@@ -30,7 +30,9 @@ class TimesLimit {
         $redis = new \Redis();
         $redis->connect('127.0.0.1',6379);
         if($redis->exists($this->getPrefix().$this->address)){
+            var_dump('存在键');
             $num = $redis->get($this->getPrefix().$this->address);
+            var_dump($num);
             $redis->set($this->getPrefix().$this->address,$num+1);
         }else{
             $redis->setex($this->getPrefix().$this->address,$this->cycle,1);
