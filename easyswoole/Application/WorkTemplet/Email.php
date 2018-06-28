@@ -46,8 +46,8 @@ class Email  extends AbstractAsyncTask
         if($res){
             //todo
 //            var_dump('增加');
-            $obj = TimesLimit::getInstance($result['email'],1);
-            $obj->incr();
+            $obj = TimesLimit::getInstance();
+            $obj->incr($result['email'],1);
         }else{
             //todo
         }

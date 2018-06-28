@@ -20,8 +20,8 @@ class Email extends Controller {
         $request = $this->request();
         $data= $request->getParsedBody();
         //次数检查
-        $number = TimesLimit::getInstance($data['email'],1);
-        if($number->number()){
+        $number = TimesLimit::getInstance();
+        if($number->number($data['email'],1)){
             //投递任务
             $obj = new sendEmail(['email'=>$data['email'],'content'=>$data['content'],'name'=>$data['name'],'subject'=>$data['subject']]);
             TaskManager::async($obj);
