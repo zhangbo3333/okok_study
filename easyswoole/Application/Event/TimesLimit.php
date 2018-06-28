@@ -23,20 +23,17 @@ class TimesLimit {
         {
             $this->workFor = 'sms';
         }
+        $this->initParams();
     }
 
     public function incr()
     {
         $redis = new \Redis();
         $redis->connect('127.0.0.1',6379);
-        var_dump($this->getPrefix().$this->address);
-        var_dump($redis->exists($this->getPrefix().$this->address));
         if($redis->exists($this->getPrefix().$this->address)){
             $num = $redis->get($this->getPrefix().$this->address);
             $redis->set($this->getPrefix().$this->address,$num+1);
         }else{
-            var_dump($this->getPrefix().$this->address);
-            var_dump($this->cycle);
             $redis->setex($this->getPrefix().$this->address,$this->cycle,1);
         }
         unset($redis);
@@ -56,8 +53,6 @@ class TimesLimit {
         $pool = PoolManager::getInstance()->getPool('App\Utility\RedisPool');
         $redis = $pool->getObj();
         $num = $redis->exec('get',$this->getPrefix().$this->address);
-        var_dump($this->getPrefix().$this->address);
-        var_dump($num);
         $pool->freeObj($redis);
         if(is_null($num)||$num < $this->number){
             return true;
