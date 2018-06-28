@@ -18,11 +18,11 @@ class Sms extends BaseSms {
             'debug'       => false,
         ]);
 
-//        $topic = $client->createTopic([
-//            'Name' => 'abc'             //自定义
-//        ]);                             //如果已经存在一个同名的topic，则不会重新创建
+        $topic = $snsClient->createTopic([
+            'Name' => 'abc'             //自定义
+        ]);                             //如果已经存在一个同名的topic，则不会重新创建
         $args = [
-            'Message' => 'Hello, world!',           // REQUIRED
+            'Message' => '中文',           // REQUIRED
             'PhoneNumber' => '+8618656560190',
         ];
         $snsClient->Publish($args);
