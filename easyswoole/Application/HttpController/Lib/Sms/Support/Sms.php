@@ -14,7 +14,7 @@ class Sms extends BaseSms {
                 'key'         => 'AKIAJRQRODSCCHW26LGQ',
                 'secret'      => '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',
             ],
-            'version'     => '2006-03-01',    //一般在aws的官方api中会有关于这个插件的版本信息
+            'version'     => 'latest',    //一般在aws的官方api中会有关于这个插件的版本信息
             'debug'       => false,
         ]);
 
