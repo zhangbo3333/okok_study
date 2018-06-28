@@ -24,9 +24,9 @@ class Sms extends Controller {
 //        $number = new SmsNumber($data['phone']);
 //        if($number->check()){
 //            //投递任务
-//        $obj = new sendSms(['phone'=>$data['phone'],'code'=>$data['code']]);
-//        TaskManager::async($obj);
-//        $this->writeJson(200,['msg'=>'ok'],'ok');
+        $obj = new sendSms(['phone'=>$data['phone'],'code'=>$data['code']]);
+        TaskManager::async($obj);
+        $this->writeJson(200,['msg'=>'ok'],'ok');
 //        }else{
 //            $this->writeJson(403,[],'too much send,you can not send any sms today ');
 //        }

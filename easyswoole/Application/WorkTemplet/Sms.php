@@ -5,7 +5,6 @@ namespace App\WorkTemplet;
 use App\HttpController\Lib\Sms\ManagerSms;
 use EasySwoole\Core\Swoole\Task\AbstractAsyncTask;
 use Illuminate\Database\Capsule\Manager as Capsule;
-use App\Event\SmsNumber;
 
 class Sms  extends AbstractAsyncTask
 {
@@ -49,8 +48,8 @@ class Sms  extends AbstractAsyncTask
         $res = Capsule::table('sms')->where('id',$result['id'])->update($arr);
         if($res){
             //todo
-            $obj = new SmsNumber($result['data']['phone']);
-            $obj->incr();
+//            $obj = new SmsNumber($result['data']['phone']);
+//            $obj->incr();
         }else{
             //todo
         }
