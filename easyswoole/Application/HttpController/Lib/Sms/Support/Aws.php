@@ -24,7 +24,7 @@ class Aws extends BaseSms {
             return   ['server_provider'=>$this->provider,'result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];
         }
         catch(\Exception $e){
-            return ['server_provider'=>$this->provider,'result'=>''];
+            return ['server_provider'=>$this->provider,'result'=>'','remark'=>$e->getMessage()];
         }
     }
 

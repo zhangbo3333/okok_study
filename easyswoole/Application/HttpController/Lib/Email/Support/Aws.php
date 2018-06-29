@@ -46,7 +46,6 @@ class Aws extends BaseEmail
         $this->PHPMailer->AltBody = $altBody;
         $this->PHPMailer->Body = $body;
         try{
-
             $result = $this->PHPMailer->send();
             if($result){
                 return ['server_provider'=>$this->provider,'result'=>'ok','receive_time'=>date('Y-m-d H:i:s')];

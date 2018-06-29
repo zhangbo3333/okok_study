@@ -40,6 +40,8 @@ class Sms  extends AbstractAsyncTask
         if($result['data']['result'] == 'ok'){
             $arr['result'] = 'ok';
             $arr['receive_time']= date('Y-m-d H:i:s');
+        }else{
+            $arr['remark'] = $result['data']['remark'];
         }
         $res = Capsule::table('sms')->where('id',$result['id'])->update($arr);
         if($res){
