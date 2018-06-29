@@ -94,7 +94,8 @@ return [
         'AUTH'=>true,
         'SECURE'=>'tls',
         'PORT'=>587,
-        'IS_HTML'=>true
+        'IS_HTML'=>true,
+        'CHARSET'=>'utf8',
     ],
     'AWS_SMS'=>[
         'KEY'=>'AKIAJRQRODSCCHW26LGQ',

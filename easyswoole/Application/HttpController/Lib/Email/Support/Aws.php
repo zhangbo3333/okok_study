@@ -69,7 +69,7 @@ class Aws extends BaseEmail
         $this->PHPMailer->SMTPSecure = $conf['SECURE'];
         $this->PHPMailer->Port = $conf['PORT'];
         $this->PHPMailer->isHTML($conf['IS_HTML']);
-        $this->PHPMailer->CharSet = 'utf8';
+        $this->PHPMailer->CharSet = $conf['CHARSET'];
         $this->from = $conf['FROM'];
     }
 }
