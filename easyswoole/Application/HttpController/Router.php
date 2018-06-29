@@ -39,7 +39,7 @@ class Router extends \EasySwoole\Core\Http\AbstractInterface\Router
         });
 
         //传递给 /index控制器 test2方法
-        $routeCollector->get( '/user2/{id:\w+}','/test2');
+//        $routeCollector->get( '/user2/{id:\w+}','/test2');
     }
 
 }
