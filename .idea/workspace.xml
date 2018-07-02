@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9ea0923-a178-423b-bcfd-9bf74800491d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/easyswoole/Application/HttpController/Push/Sms.php" beforeDir="false" afterPath="$PROJECT_DIR$/easyswoole/Application/HttpController/Push/Sms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyswoole/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/easyswoole/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php" beforeDir="false" afterPath="$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,6 +35,27 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/easyswoole/Config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="68" column="29" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sms.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/easyswoole/Application/WorkTemplet/Sms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+              <folding>
+                <element signature="e#35#77#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Email.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/easyswoole/Application/WorkTemplet/Email.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -43,11 +65,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Builder.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Builder.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="198" column="50" selection-start-line="198" selection-start-column="50" selection-end-line="198" selection-end-column="50" />
+            <state relative-caret-position="760">
+              <caret line="2823" column="8" selection-start-line="2823" selection-start-column="8" selection-end-line="2823" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Processor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Processors/Processor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -61,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sms.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/easyswoole/Application/HttpController/Push/Sms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+            <state relative-caret-position="675">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
               <folding>
                 <element signature="e#45#99#0#PHP" expanded="true" />
               </folding>
@@ -106,10 +137,10 @@
         <option value="$PROJECT_DIR$/easyswoole/Application/HttpController/Router.php" />
         <option value="$PROJECT_DIR$/easyswoole/EasySwooleEvent.php" />
         <option value="$PROJECT_DIR$/easyswoole/Application/HttpController/Lib/Email/Support/Aws.php" />
-        <option value="$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php" />
         <option value="$PROJECT_DIR$/easyswoole/Application/HttpController/Push/test.php" />
-        <option value="$PROJECT_DIR$/easyswoole/Config.php" />
         <option value="$PROJECT_DIR$/easyswoole/Application/HttpController/Push/Sms.php" />
+        <option value="$PROJECT_DIR$/easyswoole/Config.php" />
+        <option value="$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php" />
       </list>
     </option>
   </component>
@@ -207,12 +238,6 @@
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="WorkTemplet" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="okok_study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okok_study" type="462c0819:PsiDirectoryNode" />
-              <item name="easyswoole" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -251,7 +276,7 @@
       <updated>1530071723576</updated>
       <workItem from="1530071724998" duration="43509000" />
       <workItem from="1530250390990" duration="1113000" />
-      <workItem from="1530501946585" duration="1960000" />
+      <workItem from="1530501946585" duration="2804000" />
     </task>
     <task id="LOCAL-00001" summary="x">
       <created>1530071908537</created>
@@ -264,7 +289,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46582000" />
+    <option name="totallyTimeSpent" value="47426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -303,13 +328,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="x" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/easyswoole/Application/Utility/RedisPool.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/easyswoole/Log/console_1806.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -401,13 +419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/easyswoole/Application/WorkTemplet/Sms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="36" column="67" lean-forward="true" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
         </state>
       </provider>
     </entry>
@@ -543,24 +554,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/easyswoole/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/easyswoole/Application/WorkTemplet/Email.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="198" column="50" selection-start-line="198" selection-start-column="50" selection-end-line="198" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -587,11 +584,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/easyswoole/Application/HttpController/Push/Sms.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="675">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#45#99#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easyswoole/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easyswoole/Application/WorkTemplet/Sms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="25" column="43" lean-forward="true" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding>
+            <element signature="e#35#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Processors/Processor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/easyswoole/vendor/illuminate/database/Query/Builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="2823" column="8" selection-start-line="2823" selection-start-column="8" selection-end-line="2823" selection-end-column="8" />
         </state>
       </provider>
     </entry>
