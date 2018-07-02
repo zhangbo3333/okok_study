@@ -70,7 +70,7 @@ return [
         'host'      => '127.0.0.1',
         'database'  => 'log',
         'username'  => 'root',
-        'password'  => 'root1',
+        'password'  => 'root',
         'charset'   => 'utf8',
         'collation' => 'utf8_general_ci',
         'prefix'    => 't_log_'
