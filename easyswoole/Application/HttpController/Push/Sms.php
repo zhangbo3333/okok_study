@@ -7,6 +7,7 @@ use EasySwoole\Core\Http\AbstractInterface\Controller;
 use App\WorkTemplet\Sms as  sendSms;
 use EasySwoole\Core\Swoole\Task\TaskManager;
 use App\Event\TimesLimit;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 
 class Sms extends Controller {
@@ -14,6 +15,8 @@ class Sms extends Controller {
 
     public function index(){
         $this->response()->write('123');
+        var_dump(Capsule::table('test')->insert(['name'=>'张三','age'=>12]));
+
     }
 
     public function sendSms()
