@@ -70,7 +70,7 @@ return [
         'host'      => '127.0.0.1',
         'database'  => 'log',
         'username'  => 'root',
-        'password'  => 'root',
+        'password'  => 'root1',
         'charset'   => 'utf8',
         'collation' => 'utf8_general_ci',
         'prefix'    => 't_log_'
@@ -79,7 +79,7 @@ return [
         'HOST' => '127.0.0.1', // 数据库地址
         'PORT' => 3306, // 数据库端口
         'USER' => 'root', // 数据库用户名
-        'PASSWORD' => 'root1', // 数据库密码
+        'PASSWORD' => 'root', // 数据库密码
         'DB_NAME' => 'log', // 数据库库名
         'MIN' => 5, // 最小连接数
         'MAX' => 100 // 最大连接数
