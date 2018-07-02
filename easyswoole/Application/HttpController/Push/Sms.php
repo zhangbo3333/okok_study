@@ -15,8 +15,9 @@ class Sms extends Controller {
 
     public function index(){
         $this->response()->write('123');
+        var_dump('123');
         var_dump(Capsule::table('test')->insertGetId(['name'=>'张三','age'=>12]));
-
+        var_dump('456');
     }
 
     public function sendSms()
